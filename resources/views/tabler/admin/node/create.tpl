@@ -9,17 +9,17 @@
             <div class="row align-items-center">
                 <div class="col">
                     <h2 class="page-title">
-                        <span class="home-title">创建节点</span>
+                        <span class="home-title">Create Node</span>
                     </h2>
                     <div class="page-pretitle my-3">
-                        <span class="home-subtitle">创建各类节点</span>
+                        <span class="home-subtitle">Create various types of nodes</span>
                     </div>
                 </div>
                 <div class="col-auto ms-auto d-print-none">
                     <div class="btn-list">
                         <a id="create-node" href="#" class="btn btn-primary">
                             <i class="icon ti ti-device-floppy"></i>
-                            保存
+                            Save
                         </a>
                     </div>
                 </div>
@@ -32,30 +32,30 @@
                 <div class="col-md-6 col-sm-12">
                     <div class="card">
                         <div class="card-header card-header-light">
-                            <h3 class="card-title">基础信息</h3>
+                            <h3 class="card-title">Basic Information</h3>
                         </div>
                         <div class="card-body">
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label required">名称</label>
+                                <label class="form-label col-3 col-form-label required">Name</label>
                                 <div class="col">
                                     <input id="name" type="text" class="form-control" value="">
                                 </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label required">连接地址</label>
+                                <label class="form-label col-3 col-form-label required">Server Address</label>
                                 <div class="col">
                                     <input id="server" type="text" class="form-control" value="">
                                 </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label required">流量倍率</label>
+                                <label class="form-label col-3 col-form-label required">Traffic Rate</label>
                                 <div class="col">
                                     <input id="traffic_rate" type="text" class="form-control"
                                            value="">
                                 </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label">接入类型</label>
+                                <label class="form-label col-3 col-form-label">Node Type</label>
                                 <div class="col">
                                     <select id="sort" class="col form-select">
                                         <option value="14">Trojan</option>
@@ -67,18 +67,18 @@
                                 </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label">自定义配置</label>
+                                <label class="form-label col-3 col-form-label">Custom Configuration</label>
                                 <div id="custom_config"></div>
                                 <label class="form-label col-form-label">
-                                    请参考
+                                    Please refer to
                                     <a href="https://docs.sspanel.io/docs/configuration/nodes" target="_blank">
-                                        节点自定义配置文档
+                                        Node Custom Configuration Documentation
                                     </a>
-                                    修改节点自定义配置
+                                    to modify node custom configuration
                                 </label>
                             </div>
                             <div class="form-group mb-3 row">
-                                <span class="col">显示此节点</span>
+                                <span class="col">Show this node</span>
                                 <span class="col-auto">
                                     <label class="form-check form-check-single form-switch">
                                         <input id="type" class="form-check-input" type="checkbox" checked="">
@@ -86,10 +86,11 @@
                                 </span>
                             </div>
                             <div class="hr-text">
-                                <span>动态倍率</span>
+                                <span>Dynamic Rate</span>
+                            </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <span class="col">启用动态流量倍率</span>
+                                <span class="col">Enable dynamic traffic rate</span>
                                 <span class="col-auto">
                                     <label class="form-check form-check-single form-switch">
                                         <input id="is_dynamic_rate" class="form-check-input" type="checkbox" checked="">
@@ -97,7 +98,7 @@
                                 </span>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label">动态流量倍率计算方式</label>
+                                <label class="form-label col-3 col-form-label">Dynamic traffic rate calculation method</label>
                                 <div class="col">
                                     <select id="dynamic_rate_type" class="col form-select">
                                         <option value="0">Logistic</option>
@@ -106,30 +107,31 @@
                                 </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label">最大倍率</label>
+                                <label class="form-label col-3 col-form-label">Maximum Rate</label>
                                 <div class="col">
                                     <input id="max_rate" type="text" class="form-control" value="">
                                 </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label">最大倍率时间（时）</label>
+                                <label class="form-label col-3 col-form-label">Maximum Rate Time (hours)</label>
                                 <div class="col">
                                     <input id="max_rate_time" type="text" class="form-control" value="">
                                 </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label">最小倍率</label>
+                                <label class="form-label col-3 col-form-label">Minimum Rate</label>
                                 <div class="col">
                                     <input id="min_rate" type="text" class="form-control" value="">
                                 </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label">最小倍率时间（时）</label>
+                                <label class="form-label col-3 col-form-label">Minimum Rate Time (hours)</label>
                                 <div class="col">
                                     <input id="min_rate_time" type="text" class="form-control" value="">
                                 </div>
                                 <label class="form-label col-form-label">
-                                    最大倍率时间必须大于最小倍率时间，否则将不会生效
+                                    Maximum rate time must be greater than minimum rate time, otherwise it will not take effect
+                                </label>
                                 </label>
                             </div>
                         </div>
@@ -138,40 +140,41 @@
                 <div class="col-md-6 col-sm-12">
                     <div class="card">
                         <div class="card-header card-header-light">
-                            <h3 class="card-title">其他信息</h3>
+                            <h3 class="card-title">Other Information</h3>
                         </div>
                         <div class="card-body">
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label required">等级</label>
+                                <label class="form-label col-3 col-form-label required">Level</label>
                                 <div class="col">
                                     <input id="node_class" type="text" class="form-control" value="">
                                 </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label required">组别</label>
+                                <label class="form-label col-3 col-form-label required">Group</label>
                                 <div class="col">
                                     <input id="node_group" type="text" class="form-control" value="">
                                 </div>
                             </div>
                             <div class="hr-text">
-                                <span>流量设置</span>
+                                <span>Traffic Settings</span>
+                            </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label required">可用流量 (GB)</label>
+                                <label class="form-label col-3 col-form-label required">Available Traffic (GB)</label>
                                 <div class="col">
                                     <input id="node_bandwidth_limit" type="text" class="form-control"
                                            value="">
                                 </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label required">流量重置日</label>
+                                <label class="form-label col-3 col-form-label required">Traffic Reset Day</label>
                                 <div class="col">
                                     <input id="bandwidthlimit_resetday" type="text" class="form-control"
                                            value="">
                                 </div>
                             </div>
                             <div class="form-group mb-3 row">
-                                <label class="form-label col-3 col-form-label required">速率限制 (Mbps)</label>
+                                <label class="form-label col-3 col-form-label required">Speed Limit (Mbps)</label>
                                 <div class="col">
                                     <input id="node_speedlimit" type="text" class="form-control"
                                            value="">

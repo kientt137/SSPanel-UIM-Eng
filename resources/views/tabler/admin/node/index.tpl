@@ -6,11 +6,11 @@
             <div class="row align-items-center">
                 <div class="col">
                     <h2 class="page-title">
-                        <span class="home-title">节点列表</span>
+                        <span class="home-title">Node List</span>
                     </h2>
                     <div class="page-pretitle my-3">
                         <span class="home-subtitle">
-                            系统中所有节点的列表
+                            List of all nodes in the system
                         </span>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                     <div class="btn-list">
                         <a href="/admin/node/create" class="btn btn-primary">
                             <i class="icon ti ti-plus"></i>
-                            创建
+                            Create
                         </a>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
         }
 
         function deleteNode(node_id) {
-            $('#notice-message').text('确定删除此节点？');
+            $('#notice-message').text('Are you sure you want to delete this node?');
             $('#notice-dialog').modal('show');
             $('#notice-confirm').off('click').on('click', function () {
                 $.ajax({
@@ -94,7 +94,7 @@
         }
 
         function copyNode(node_id) {
-            $('#notice-message').text('确定复制此节点？');
+            $('#notice-message').text('Are you sure you want to copy this node?');
             $('#notice-dialog').modal('show');
             $('#notice-confirm').off('click').on('click', function () {
                 $.ajax({

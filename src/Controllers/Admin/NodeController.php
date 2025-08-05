@@ -128,7 +128,7 @@ final class NodeController extends BaseController
         if (! $node->save()) {
             return $response->withJson([
                 'ret' => 0,
-                'msg' => '添加失败',
+                'msg' => 'Add failed',
             ]);
         }
 
@@ -144,7 +144,7 @@ final class NodeController extends BaseController
             } catch (TelegramSDKException | GuzzleException) {
                 return $response->withJson([
                     'ret' => 1,
-                    'msg' => '添加成功，但 IM Bot 通知失败',
+                    'msg' => 'Added successfully, but IM Bot notification failed',
                     'node_id' => $node->id,
                 ]);
             }
@@ -152,7 +152,7 @@ final class NodeController extends BaseController
 
         return $response->withJson([
             'ret' => 1,
-            'msg' => '添加成功',
+            'msg' => 'Added successfully',
             'node_id' => $node->id,
         ]);
     }
@@ -221,7 +221,7 @@ final class NodeController extends BaseController
         if (! $node->save()) {
             return $response->withJson([
                 'ret' => 0,
-                'msg' => '修改失败',
+                'msg' => 'Update failed',
             ]);
         }
 
@@ -237,14 +237,14 @@ final class NodeController extends BaseController
             } catch (TelegramSDKException | GuzzleException) {
                 return $response->withJson([
                     'ret' => 1,
-                    'msg' => '修改成功，但 IM Bot 通知失败',
+                    'msg' => 'Updated successfully, but IM Bot notification failed',
                 ]);
             }
         }
 
         return $response->withJson([
             'ret' => 1,
-            'msg' => '修改成功',
+            'msg' => 'Updated successfully',
         ]);
     }
 
@@ -256,7 +256,7 @@ final class NodeController extends BaseController
 
         return $response->withJson([
             'ret' => 1,
-            'msg' => '重置节点通讯密钥成功',
+            'msg' => 'Node communication key reset successfully',
         ]);
     }
 
@@ -268,7 +268,7 @@ final class NodeController extends BaseController
 
         return $response->withJson([
             'ret' => 1,
-            'msg' => '重置节点流量成功',
+            'msg' => 'Node bandwidth reset successfully',
         ]);
     }
 
@@ -282,7 +282,7 @@ final class NodeController extends BaseController
         if (! $node->delete()) {
             return $response->withJson([
                 'ret' => 0,
-                'msg' => '删除失败',
+                'msg' => 'Delete failed',
             ]);
         }
 
@@ -298,14 +298,14 @@ final class NodeController extends BaseController
             } catch (TelegramSDKException | GuzzleException) {
                 return $response->withJson([
                     'ret' => 1,
-                    'msg' => '删除成功，但 IM Bot 通知失败',
+                    'msg' => 'Deleted successfully, but IM Bot notification failed',
                 ]);
             }
         }
 
         return $response->withJson([
             'ret' => 1,
-            'msg' => '删除成功',
+            'msg' => 'Deleted successfully',
         ]);
     }
 
@@ -315,20 +315,20 @@ final class NodeController extends BaseController
         $new_node = $old_node->replicate([
             'node_bandwidth',
         ]);
-        $new_node->name .= ' (副本)';
+        $new_node->name .= ' (Copy)';
         $new_node->node_bandwidth = 0;
         $new_node->password = Tools::genRandomChar(32);
 
         if (! $new_node->save()) {
             return $response->withJson([
                 'ret' => 0,
-                'msg' => '复制失败',
+                'msg' => 'Copy failed',
             ]);
         }
 
         return $response->withJson([
             'ret' => 1,
-            'msg' => '复制成功',
+            'msg' => 'Copied successfully',
         ]);
     }
 
@@ -341,10 +341,10 @@ final class NodeController extends BaseController
 
         foreach ($nodes as $node) {
             $node->op = '<button class="btn btn-red" id="delete-node-' . $node->id . '" 
-            onclick="deleteNode(' . $node->id . ')">删除</button>
+            onclick="deleteNode(' . $node->id . ')">Delete</button>
             <button class="btn btn-orange" id="copy-node-' . $node->id . '" 
-            onclick="copyNode(' . $node->id . ')">复制</button>
-            <a class="btn btn-primary" href="/admin/node/' . $node->id . '/edit">编辑</a>';
+            onclick="copyNode(' . $node->id . ')">Copy</button>
+            <a class="btn btn-primary" href="/admin/node/' . $node->id . '/edit">Edit</a>';
             $node->type = $node->type();
             $node->sort = $node->sort();
             $node->is_dynamic_rate = $node->isDynamicRate();
